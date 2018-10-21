@@ -1,8 +1,8 @@
-# coolOps.io deployment images
+# coolops.io deployment images
 
-coolOps.io is a software as a service that integrates any workflow with Slack to give you ChatOps without the need for any coding.
+coolops.io is a software as a service that integrates any workflow with Slack to give you ChatOps without the need for any coding.
 
-When a deployment is triggered on Slack, coolOps.io will run your deployment image injecting the variables you provide as environment variables to the docker container.
+When a deployment is triggered on Slack, coolops.io will run your deployment image injecting the variables you provide as environment variables to the docker container.
 
 ## How does it work?
 
