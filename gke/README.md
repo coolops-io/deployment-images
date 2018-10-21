@@ -1,4 +1,4 @@
-# coolOps.io's Googke Kubernetes Engine deployment image
+# coolops.io's Googke Kubernetes Engine deployment image
 
 This deployment image sets a new docker image to a Kubernetes Deployment on the Google Kubernetes Engine.
 
