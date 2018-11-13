@@ -8,7 +8,7 @@ When a deployment is triggered on Slack, coolops.io will run your deployment ima
 
 ### 1. You notify about a new build from your CI
 
-Whenever your CI pipeline is completed and you have a new build, you can use our [command line interface](https://github.com/coolopsio/coolops) to notify us about it. Here is the step you can add to your `config.yaml` file if you use CircleCI:
+Whenever your CI pipeline is completed and you have a new build, you can use our [command line interface](https://github.com/coolops-io/coolops) to notify us about it. Here is the step you can add to your `config.yaml` file if you use CircleCI:
 
 ```yml
 notify_coolops:
@@ -19,18 +19,18 @@ notify_coolops:
     - run:
       name: Notify CoolOps.io
       command: |
-        curl -L https://github.com/coolopsio/coolops/releases/download/v0.1.0/install.sh | sudo sh
+        curl -L https://github.com/coolops-io/coolops/releases/download/v0.2.0/install.sh | sudo sh
         coolops build:new:circleci -t ${COOLOPS_PROJECT_API_TOKEN} -p DOCKER_TAG=${DOCKER_TAG} -p COMMIT_SHA1=${CIRCLE_SHA1}
 ```
 
 The two relevant commands are the following:
 
 ```bash
-curl -L https://github.com/coolopsio/coolops/releases/download/v0.1.0/install.sh | sudo sh
+curl -L https://github.com/coolops-io/coolops/releases/download/v0.2.0/install.sh | sudo sh
 coolops build:new:circleci -t ${COOLOPS_PROJECT_API_TOKEN} -p DOCKER_TAG=${DOCKER_TAG} -p COMMIT_SHA1=${CIRCLE_SHA1}
 ```
 
-First we download the [command line interface](https://github.com/coolopsio/coolops), then we notify about the new build passing `DOCKER_TAG` and `COMMIT_SHA1` as parameters to the deployment. Whenever a deployment for this build is started on slack, your deployment images will have access to those values as environment variables.
+First we download the [command line interface](https://github.com/coolops-io/coolops), then we notify about the new build passing `DOCKER_TAG` and `COMMIT_SHA1` as parameters to the deployment. Whenever a deployment for this build is started on slack, your deployment images will have access to those values as environment variables.
 
 Because we are using the `build:new:circleci` commands, we already define some parameters (like the build name and some metadata) from teh CircleCI environment variable for you. But you also have the option to use your own custom solution by using the `build:new` command.
 
